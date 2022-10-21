@@ -3,6 +3,7 @@ package cr.ac.una.Proyecto1Paradigmas.api;
 import cr.ac.una.Proyecto1Paradigmas.entity.Persona;
 import cr.ac.una.Proyecto1Paradigmas.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +28,6 @@ public class PersonaRest {
     @PostMapping
     @CrossOrigin(origins = "*", maxAge = 3600) // create
     public ResponseEntity<Persona> create(@RequestBody Persona persona){
-
-		
         return ResponseEntity.ok(personaRepository.save(persona));
     }
 
