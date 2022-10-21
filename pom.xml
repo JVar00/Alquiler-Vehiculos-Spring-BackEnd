@@ -14,7 +14,7 @@
 	<name>Proyecto1Paradigmas</name>
 	<description>Proyecto 1 Paradigmas de Programación</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17.0.2</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
