@@ -27,6 +27,8 @@ public class PersonaRest {
     @PostMapping
     @CrossOrigin(origins = "*", maxAge = 3600) // create
     public ResponseEntity<Persona> create(@RequestBody Persona persona){
+
+		
         return ResponseEntity.ok(personaRepository.save(persona));
     }
 

@@ -1,53 +1,75 @@
 package cr.ac.una.Proyecto1Paradigmas.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Alquiler {
-    public Alquiler(){
+public class Alquiler implements Serializable {
 
-    }
+	public Alquiler() {
 
-    public Long getId_Alquiler() {
-        return id_Alquiler;
-    }
+	}
 
-    public void setId_Alquiler(Long id_Alquiler) {
-        this.id_Alquiler = id_Alquiler;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_Alquiler;
 
-    public String getPersona() {
-        return persona;
-    }
+	@OneToOne
+	@JoinColumn(name = "persona_id", referencedColumnName = "id_Persona")
+	private Persona persona;
 
-    public void setPersona(String persona) {
-        this.persona = persona;
-    }
+	@OneToOne
+	@JoinColumn(name = "vehiculo_id", referencedColumnName = "id_Vehiculo")
+	private Vehiculo vehiculo;
 
-    public String getVehiculo() {
-        return vehiculo;
-    }
+	
+	    @JsonFormat(pattern="yyyy-MM-dd")
+	private Date fecha;
 
-    public void setVehiculo(String vehiculo) {
-        this.vehiculo = vehiculo;
-    }
+	public Alquiler(Long id_Alquiler, Persona persona, Vehiculo vehiculo, Date fecha) {
+		this.id_Alquiler = id_Alquiler;
+		this.persona = persona;
+		this.vehiculo = vehiculo;
+		this.fecha = fecha;
+	}
 
-    public String getFecha() {
-        return vehiculo;
-    }
+	public Long getId_Alquiler() {
+		return id_Alquiler;
+	}
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+	public void setId_Alquiler(Long id_Alquiler) {
+		this.id_Alquiler = id_Alquiler;
+	}
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_Alquiler;
+	public Persona getPersona() {
+		return persona;
+	}
 
-    private String persona;
-    private String vehiculo;
-    private String fecha;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
+	public Vehiculo getVehiculo() {
+		return vehiculo;
+	}
+
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 }

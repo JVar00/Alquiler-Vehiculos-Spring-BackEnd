@@ -19,21 +19,21 @@ public class AlquilerAOP {
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.AlquilerRepository.findAll(..))")
     public void logBeforeFindAll(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.AlquilerRepository.findById(..))")
     public void logBeforeFindById(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.AlquilerRepository.save(..))")
     public void logBeforeSave(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.AlquilerRepository.delete(..))")
     public void logBeforeDelete(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
 }

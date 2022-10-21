@@ -19,21 +19,21 @@ public class PersonaAOP {
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.PersonaRepository.findAll(..))")
     public void logBeforeFindAll(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.PersonaRepository.findById(..))")
     public void logBeforeFindById(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.PersonaRepository.save(..))")
     public void logBeforeSave(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.PersonaRepository.delete(..))")
     public void logBeforeDelete(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
 }

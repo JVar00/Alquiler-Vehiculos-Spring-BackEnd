@@ -19,21 +19,21 @@ public class Tipo_VehiculoAOP {
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.Tipo_VehiculoRepository.findAll(..))")
     public void logBeforeFindAll(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.Tipo_VehiculoRepository.findById(..))")
     public void logBeforeFindById(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.Tipo_VehiculoRepository.save(..))")
     public void logBeforeSave(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
     @Before("execution(* cr.ac.una.Proyecto1Paradigmas.repository.Tipo_VehiculoRepository.delete(..))")
     public void logBeforeDelete(JoinPoint joinPoint){
-        logRepository.save(new Log(joinPoint.getSignature().getName(), new Date()));
+        logRepository.save(new Log(null,joinPoint.getSignature().getName(), new Date()));
     }
 
 }
