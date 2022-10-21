@@ -1,10 +1,10 @@
-package una.ac.cr.alquilerVehiculos;
+package cr.ac.una.Proyecto1Paradigmas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AlquilerVehiculosApplicationTests {
+class Proyecto1ParadigmasApplicationTests {
 
 	@Test
 	void contextLoads() {
