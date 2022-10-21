@@ -35,15 +35,10 @@ public class AlquilerRest {
 
 	@PostMapping
 	@CrossOrigin(origins = "*", maxAge = 3600) // create
-	public ResponseEntity<Alquiler> create(@RequestBody Alquiler alquiler) throws ParseException {
-		String pattern = "MM-dd-yyyy";
+	public ResponseEntity<Alquiler> create(@RequestBody Alquiler alquiler)  {
+		String pattern = "yyyy-MM-dd";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-		String date1 = simpleDateFormat.format(new Date());
-		
-		
-		alquiler.setFecha( new Date());
-		System.out.println(alquiler.getFecha());
-		// alquiler
+
 		List<Alquiler> alquileres = new ArrayList();
 		alquilerRepository.findAll().forEach(alquiler2 -> {
 			alquileres.add(alquiler2);
@@ -52,20 +47,18 @@ public class AlquilerRest {
 		for (var a : alquileres) {
 			System.out.println(a.getFecha());
 			System.out.println(alquiler.getFecha());
-			if (alquiler.getVehiculo().getPlaca().equals(a.getVehiculo().getPlaca())) {
-				return ResponseEntity.badRequest().build();
-			}
+			String date1 = simpleDateFormat.format(alquiler.getFecha());
 			String date2 = simpleDateFormat.format(a.getFecha());
-			if (date1.equals(date2)
-					&& a.getPersona().getIdentificacion().equals(alquiler.getPersona().getIdentificacion())) {
+			if (alquiler.getVehiculo().getId_Vehiculo().equals(a.getVehiculo().getId_Vehiculo())) {
 				return ResponseEntity.badRequest().build();
 			}
 
+			if ( a.getPersona().getId_Persona().equals(alquiler.getPersona().getId_Persona()) && date1.equals(date2) ) {
+				return ResponseEntity.badRequest().build();
+			}
 		}
-
 		return ResponseEntity.ok(alquilerRepository.save(alquiler));
 	}
-
 	@GetMapping("/{id}")
 	@CrossOrigin(origins = "*", maxAge = 3600)
 	public ResponseEntity<Alquiler> findById(@PathVariable Long id) {
@@ -81,6 +74,23 @@ public class AlquilerRest {
 	public ResponseEntity<Alquiler> update(@RequestBody Alquiler alquiler) {
 		if (!alquilerRepository.findById(alquiler.getId_Alquiler()).isPresent()) {
 			ResponseEntity.badRequest().build();
+		}
+		String pattern = "yyyy-MM-dd";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+		List<Alquiler> alquileres = new ArrayList();
+		alquilerRepository.findAll().forEach(alquiler2 -> {
+			alquileres.add(alquiler2);
+		});
+		for (var a : alquileres) {
+			System.out.println(a.getFecha());
+			System.out.println(alquiler.getFecha());
+			String date1 = simpleDateFormat.format(alquiler.getFecha());
+			String date2 = simpleDateFormat.format(a.getFecha());
+
+			if ( a.getPersona().getId_Persona().equals(alquiler.getPersona().getId_Persona()) && date1.equals(date2) ) {
+				return ResponseEntity.badRequest().build();
+			}
 		}
 		return ResponseEntity.ok(alquilerRepository.save(alquiler));
 	}

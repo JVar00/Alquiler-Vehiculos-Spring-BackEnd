@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9daae41-2ba1-49bc-b5ce-f9b4576fd7bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/Proyecto1ParadigmasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/Proyecto1ParadigmasApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/api/PersonaRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/api/PersonaRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/repository/PersonaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/repository/PersonaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/api/AlquilerRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cr/ac/una/Proyecto1Paradigmas/api/AlquilerRest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jeff0/Documents/Universidad/6_Ciclo/Paradigmas/Proyecto_1/Alquiler-Vehiculos-Spring-BackEnd",
-    "spring.configuration.checksum": "710919f8b3d8f29b5c4cfebaa20add8b"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jeff0/Documents/Universidad/6_Ciclo/Paradigmas/Proyecto_1/Alquiler-Vehiculos-Spring-BackEnd&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;710919f8b3d8f29b5c4cfebaa20add8b&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.Proyecto1ParadigmasApplication">
     <configuration name="All in Alquiler-Vehiculos-Spring-BackEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Alquiler-Vehiculos-Spring-BackEnd" />
@@ -96,7 +94,8 @@
       <updated>1665461169823</updated>
       <workItem from="1665461171443" duration="10000" />
       <workItem from="1666373378581" duration="656000" />
-      <workItem from="1666374075203" duration="10162000" />
+      <workItem from="1666374075203" duration="10919000" />
+      <workItem from="1666387620608" duration="5069000" />
     </task>
     <servers />
   </component>
